@@ -678,7 +678,7 @@ p { margin: 0 0 1em; color: var(--slate); max-width: 62ch; }
 /* HP Ukuran Sangat Kecil (Maksimal 480px) */
 @media (max-width: 480px) {
   .brand-name {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .brand-logo {

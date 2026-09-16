@@ -112,7 +112,7 @@ if (contactForm) {
     // Ambil nilai dari input (sesuaikan ID input di HTML)
     const nama = document.getElementById('nama')?.value || '';
     const pesan = document.getElementById('pesan')?.value || '';
-    const nomorWA = '6281234567890'; // Ganti dengan nomor WA perusahaan
+    const nomorWA = '6281320199826'; // Ganti dengan nomor WA perusahaan
 
     // Format pesan WhatsApp
     const url = `https://wa.me/${nomorWA}?text=Halo%20Admin,%20saya%20${encodeURIComponent(nama)}.%20${encodeURIComponent(pesan)}`;

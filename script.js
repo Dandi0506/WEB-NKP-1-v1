@@ -105,18 +105,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // HANDLER FORM KONTAK
-  const contactForm = document.getElementById('contactForm');
-  const formNote = document.getElementById('formNote');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      if (formNote) {
-        formNote.textContent = 'Pesan Anda berhasil terkirim! Tim kami akan segera menghubungi Anda.';
-        formNote.style.color = 'var(--blue)';
-      }
-      contactForm.reset();
-    });
-  }
-});
+    // Ambil nilai dari input (sesuaikan ID input di HTML)
+    const nama = document.getElementById('nama')?.value || '';
+    const pesan = document.getElementById('pesan')?.value || '';
+    const nomorWA = '6281234567890'; // Ganti dengan nomor WA perusahaan
+
+    // Format pesan WhatsApp
+    const url = `https://wa.me/${nomorWA}?text=Halo%20Admin,%20saya%20${encodeURIComponent(nama)}.%20${encodeURIComponent(pesan)}`;
+
+    // Buka WhatsApp di tab baru
+    window.open(url, '_blank');
+
+    if (formNote) {
+      formNote.textContent = 'Mengarahkan Anda ke WhatsApp...';
+      formNote.style.color = 'var(--blue)';
+    }
+
+    contactForm.reset();
+  });
+}

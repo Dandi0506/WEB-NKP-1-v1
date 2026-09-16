@@ -117,8 +117,16 @@ if (contactForm) {
     // Format pesan WhatsApp
     const url = `https://wa.me/${nomorWA}?text=Halo%20Admin,%20saya%20${encodeURIComponent(nama)}.%20${encodeURIComponent(pesan)}`;
 
-    // Buka WhatsApp di tab baru
-    window.open(url, '_blank');
+// Deteksi apakah pengguna membuka dari HP/Mobile
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (isMobile) {
+  // Buka aplikasi WA langsung di HP
+  window.location.href = url;
+} else {
+  // Buka WhatsApp Web di tab baru jika menggunakan laptop/desktop
+  window.open(url, '_blank');
+}
 
     if (formNote) {
       formNote.textContent = 'Mengarahkan Anda ke WhatsApp...';

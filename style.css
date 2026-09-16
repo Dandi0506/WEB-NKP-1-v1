@@ -677,24 +677,30 @@ p { margin: 0 0 1em; color: var(--slate); max-width: 62ch; }
 
 /* HP Ukuran Sangat Kecil (Maksimal 480px) */
 @media (max-width: 480px) {
-  .brand-name {
-    font-size: 15px;
+  /* Logo & Branding */
+  .brand-logo {
+    height: 28px; /* Diperkecil agar tidak memakan ruang header */
   }
 
-  .brand-logo {
-    height: 35px;
+  .brand-name {
+    font-size: 14px;
+    font-weight: 600;
   }
 
   .brand-tag {
-    font-size: 9px;
+    font-size: 8.5px;
+    letter-spacing: 0.3px;
   }
 
+  /* Typography Hero & Statistik */
   .hero-title {
-    font-size: 25px;
+    font-size: 22px; /* Lebih proporsional di layar HP */
+    line-height: 1.25;
   }
 
   .stat-num {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 700;
   }
 }
   .main-nav.open { display: flex; }
